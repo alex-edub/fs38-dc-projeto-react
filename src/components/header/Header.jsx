@@ -1,5 +1,8 @@
 import Logo from "../../assets/img/logo/logo.png";
+import SearchIcon from "../icons/SearchIcon";
 import style from "./header.module.css";
+import Cart from "../icons/Cart.jsx";
+
 
 function Header() {
   return (
@@ -9,8 +12,7 @@ function Header() {
           <img className={style.logoImg} src={Logo} alt="" />
         </div>
 
-        <div className="search">
-          <div className={style.input}>
+          <div className={style.search}>
             <input
               className={style.inputSearch}
               type="text"
@@ -18,19 +20,22 @@ function Header() {
               id="search"
               placeholder="Pesquisar produto..."
             />
+            <i className={style.iconSearch}>
+              <SearchIcon/>
+            </i>
           </div>
-        </div>
 
-        <div className={style.storeLinks}>
-          <a className="sign-up" href="">
-            Cadastre-se
-          </a>
-          <a className={style.btnLogin} href="">
-            Entrar
-          </a>
-          <a className="cart" href="">
-            Cart
-          </a>
+          <div className={style.storeLinks}>
+            <a className="sign-up" href="">
+              Cadastre-se
+            </a>
+            <a className={style.btnLogin} href="">
+              Entrar
+            </a>
+            <div className={style.cart}>
+              <Cart/>
+              <span>12</span>
+            </div>
         </div>
       </header>
     </>
