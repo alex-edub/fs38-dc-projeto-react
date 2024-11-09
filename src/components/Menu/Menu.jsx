@@ -2,10 +2,10 @@ import style from "./Menu.module.css";
 import {useState} from 'react';
 
 function Menu(){
-    const [itemIndex, setItemIndex] = useState(null);
+    const [itemIndex, setItemIndex] = useState(0);
     const menuItens = ["Home", "Produtos", "Categorias", "Meus pedidos"];
 
-    function handleclick(index){
+    function handleClick(index){
         setItemIndex(index);
     }
         
@@ -15,14 +15,15 @@ function Menu(){
                 {menuItens.map((item, index) => (
                     <li 
                         key={index}
-                        onClick={()=>handleclick(index)}
-                        className={index === itemIndex ? '${style.active}' : style.item}
+                        onClick={() => handleClick(index)}
+                        className={index === itemIndex ?`${style.active}`  : style.item}
                     >
                         {item}
-                </li>
+                    </li>
                 ))}
             </ul>    
         </>
     );
 }
+
 export default Menu;
